@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
    mkdir -p var/www/html && mkdir /run/php
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
-COPY tools/script.sh /var/www/html/
+COPY ./tools/script.sh /var/www/html/  
 
 WORKDIR /var/www/html
 

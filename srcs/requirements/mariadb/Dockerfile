@@ -5,8 +5,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/
-COPY ./tools /tmp/
+COPY ./tools/ /tmp/
 
-RUN service mysql start && bash /tmp/init_script.sh && rm -rf /tmp/init_script.sh
+ENTRYPOINT [ "/tmp/init_script.sh" ]
 
-CMD ["mysqld"]
+CMD [ "mysqld" ]
