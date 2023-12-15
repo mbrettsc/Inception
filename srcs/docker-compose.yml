@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services:
   nginx:
@@ -42,13 +42,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/data/mysql
+      device: /home/mbrettsc/data/mysql
       o: bind
   wordpress_data:
     driver: local
     driver_opts:
       type: none
-      device: /home/data/wordpress
+      device: /home/mbrettsc/data/wordpress
       o: bind
 
 networks:

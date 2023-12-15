@@ -12,7 +12,8 @@ sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
 sed -i "s/database_name_here/$MYSQL_DB_NAME/g" wp-config-sample.php
 mv wp-config-sample.php wp-config.php
 
-wp core install --url=$DOMAIN_NAME --title=Inception --admin_user=$MYSQL_USER --admin_password=$MYSQL_PASSWORD --admin_email=mbrettsc@student.42kocaeli.com.tr --allow-root
+wp core install --url=$DOMAIN_NAME --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_EMAIL --allow-root
+wp user create $WP_USER $WP_USER_MAIL --role=author --user_pass=$WP_PASSWORD --allow-root
 wp theme install hestia --activate --allow-root
 
 exec "$@"
