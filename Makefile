@@ -7,4 +7,6 @@ clean: down
 	docker system prune -a
 	docker volume rm $$(docker volume ls -q)
 	rm -rf /home/mbrettsc/data
-re: down clean all
+re: clean all
+
+.PHONY: all down clean re
