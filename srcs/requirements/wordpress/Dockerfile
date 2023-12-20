@@ -13,6 +13,8 @@ EXPOSE 9000
 
 WORKDIR /var/www/html
 
+RUN chmod +x ./wp_script.sh
+
 ENTRYPOINT [ "./wp_script.sh" ]
 
 CMD [ "/usr/sbin/php-fpm7.3", "-F" ]

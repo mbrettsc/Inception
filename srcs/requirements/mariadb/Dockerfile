@@ -8,6 +8,8 @@ COPY ./tools/ /tmp/
 
 EXPOSE 3306
 
+RUN chmod +x /tmp/db_script.sh
+
 ENTRYPOINT [ "/tmp/db_script.sh" ]
 
 CMD [ "mysqld" ]
